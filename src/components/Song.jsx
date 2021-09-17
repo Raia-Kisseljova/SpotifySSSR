@@ -1,5 +1,5 @@
 import React from "react";
-import { AiOutlineHeart, AiFillPlayCircle} from "react-icons/ai";
+import { AiFillHeart, AiFillPlayCircle} from "react-icons/ai";
 import { connect } from "react-redux";
 import { useEffect } from "react";
 import { setSelectedAction, setFavouriteAction } from "../redux/actions";
@@ -29,7 +29,7 @@ const Song = ({selected, setSelected, setFavourite, track, favourites}) => {
       <span className='card-title trackHover px-3' style={{ color: "white" }}>
         {track.title}
       </span>
-      {isFavourite ? <AiOutlineHeart />:<AiOutlineHeart className='likeBtn' onClick={() => setFavourite(track)} />}
+      {isFavourite ? <AiFillHeart />:<AiFillHeart className='likeBtn' onClick={() => setFavourite(track)} />}
       <small className='duration' style={{ color: "white" }}>
         {Math.floor(parseInt(track.duration) / 60)}:
         {parseInt(track.duration) % 60 < 10
