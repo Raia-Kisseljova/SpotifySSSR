@@ -112,7 +112,7 @@ class Home extends React.Component {
                   <Row
                     className='row-cols-1 row-cols-sm-2 row-cols-lg-3 row-cols-xl-4 imgLinks py-3'
                     id='rockSection'>
-                    {this.props.song.data.rockSongs[0]?.map((song) => (
+                    {this.props.song.data.rockSongs[0]?.slice(0,5).map((song) => (
                       <AlbumCard song={song} key={song.id} />
                     ))}
                   </Row>
@@ -126,7 +126,7 @@ class Home extends React.Component {
                   <Row
                     className='row-cols-1 row-cols-sm-2 row-cols-lg-3 row-cols-xl-4 imgLinks py-3'
                     id='popSection'>
-                    {this.props.song.data.popSongs[0]?.map((song) => (
+                    {this.props.song.data.popSongs[0]?.slice(0,5).map((song) => (
                       <AlbumCard song={song} key={song.id} />
                     ))}
                   </Row>
@@ -140,7 +140,7 @@ class Home extends React.Component {
                   <Row
                     className='row-cols-1 row-cols-sm-2 row-cols-lg-3 row-cols-xl-4 imgLinks py-3'
                     id='hipHopSection'>
-                    {this.props.song.data.hipHopSongs[1]?.map((song) => (
+                    {this.props.song.data.hipHopSongs[1]?.slice(0,5).map((song) => (
                       <AlbumCard song={song} key={song.id} />
                     ))}
                   </Row>
