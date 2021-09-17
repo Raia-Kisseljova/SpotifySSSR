@@ -1,9 +1,4 @@
-import {
-  FILL_SONGS,
-  FILL_SONGS_ERROR,
-  FILL_SONGS_LOADING,
-  SET_SELECTED,
-} from "./index";
+import { FILL_SONGS, FILL_SONGS_ERROR, FILL_SONGS_LOADING } from "./index";
 import { initialState } from "./index";
 // const payload = (category === "rockSongs" ? { rockSongs: [...state.song.data.rockSongs, songInfo] }
 //   : category === "popSongs")
@@ -15,8 +10,8 @@ const songReducer = (state = initialState.song, action) => {
         data: action.payload,
         data: {
           ...state.data,
-          [action.category]: [[...action.category], action.payload],
-        },
+          [action.category]: [[...action.category], action.payload]
+        }
       };
     // this.setState({
     //   [category]: [...this.state[category], songInfo[0]],
@@ -31,12 +26,6 @@ const songReducer = (state = initialState.song, action) => {
         ...state,
         error: action.payload,
       };
-    case SET_SELECTED:
-      return {
-        ...state,
-        selected: action.payload,
-      };
-
     default:
       return state;
   }
