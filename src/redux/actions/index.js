@@ -1,4 +1,4 @@
-import { FILL_SONGS, FILL_SONGS_ERROR, FILL_SONGS_LOADING, SET_SELECTED } from "../reducers";
+import { FILL_SONGS, FILL_SONGS_ERROR, FILL_SONGS_LOADING, SET_SELECTED, SET_FAVOURITE } from "../reducers";
 
 const rockArtists = [
   "queen",
@@ -21,6 +21,11 @@ const popArtists = [
 
 export const setSelectedAction = (song) => ({
   type: SET_SELECTED,
+  payload: song
+})
+
+export const setFavouriteAction = (song) => ({
+  type: SET_FAVOURITE,
   payload: song
 })
 
