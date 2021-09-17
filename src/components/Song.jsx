@@ -21,7 +21,7 @@ const Song = ({selected, setSelected, setFavourite, track, favourites}) => {
     console.log("FAVOURITE=>",favourites)
   }, [selected, favourites] )
 
-  const isFavourite = favourites.includes(track.title)
+  const isFavourite = favourites.includes(track)
 
   return (
     <div className='py-3 trackHover'>
@@ -29,7 +29,7 @@ const Song = ({selected, setSelected, setFavourite, track, favourites}) => {
       <span className='card-title trackHover px-3' style={{ color: "white" }}>
         {track.title}
       </span>
-      {isFavourite ? <AiFillHeart />:<AiFillHeart className='likeBtn' onClick={() => setFavourite(track)} />}
+      {isFavourite ? <AiFillHeart className='likeBtn-fave' />:<AiFillHeart className='likeBtn' onClick={() => setFavourite(track)} />}
       <small className='duration' style={{ color: "white" }}>
         {Math.floor(parseInt(track.duration) / 60)}:
         {parseInt(track.duration) % 60 < 10

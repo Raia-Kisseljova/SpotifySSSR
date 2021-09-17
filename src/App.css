@@ -244,8 +244,18 @@ ul {
 
 .likeBtn{
   font-size: 1.5em;
+  fill: silver;
+}
+
+.likeBtn-fave{
+  font-size: 1.5em;
+  fill: gold;
 }
 
 .likeBtn:hover{
   color:green;
+}
+
+.set-song {
+  color: white;
 }

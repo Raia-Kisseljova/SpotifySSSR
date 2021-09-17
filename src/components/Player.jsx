@@ -13,7 +13,7 @@ const Player = ({selected}) => (
         <Row>
           {selected && 
           // <img src={selected.md5_image}/>
-          <h4>{selected.title}</h4>
+          <h4 className="set-song">{selected.title}</h4>
           }
           <div className="col-6 col-md-4 col-lg-2 offset-3 offset-md-4 offset-lg-5 playerControls mt-1">
             <Row>

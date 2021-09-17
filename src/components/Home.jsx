@@ -71,7 +71,7 @@ class Home extends React.Component {
   };
 
   render() {
-    // console.log(this.props.song.data, "THIS IS THE REDUX STATE DATA[0]");
+    console.log(this.props.song.data, "THIS IS THE REDUX STATE DATA[0]");
     // console.log(this.state, "THIS IS THE COMPONENT STATE");
     // console.log(this.props.song, "THIS");
     return this.props.song.error ? (
