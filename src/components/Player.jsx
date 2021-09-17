@@ -1,11 +1,20 @@
 import React from "react";
+import { connect } from "react-redux";
 import { Row } from "react-bootstrap";
 
-const Player = () => (
+const mapStateToProps = (state) => ({
+  selected: state.song.selected,
+});
+
+const Player = ({selected}) => (
   <div className="container-fluid fixed-bottom bg-container pt-1">
     <Row>
       <div className="col-lg-10 offset-lg-2">
         <Row>
+          {selected && 
+          // <img src={selected.md5_image}/>
+          <h4>{selected.title}</h4>
+          }
           <div className="col-6 col-md-4 col-lg-2 offset-3 offset-md-4 offset-lg-5 playerControls mt-1">
             <Row>
               <a href="/">
@@ -44,4 +53,4 @@ const Player = () => (
   </div>
 );
 
-export default Player;
+export default connect(mapStateToProps)(Player);

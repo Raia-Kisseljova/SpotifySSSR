@@ -71,7 +71,7 @@ class Home extends React.Component {
   };
 
   render() {
-    console.log(this.props.song.data, "THIS IS THE REDUX STATE DATA[0]");
+    // console.log(this.props.song.data, "THIS IS THE REDUX STATE DATA[0]");
     // console.log(this.state, "THIS IS THE COMPONENT STATE");
     // console.log(this.props.song, "THIS");
     return this.props.song.error ? (
@@ -112,7 +112,7 @@ class Home extends React.Component {
                   <Row
                     className='row-cols-1 row-cols-sm-2 row-cols-lg-3 row-cols-xl-4 imgLinks py-3'
                     id='rockSection'>
-                    {this.props.song.data.rockSongs[0]?.slice(0,5).map((song) => (
+                    {this.props.song.data.rockSongs[1]?.slice(0,5).map((song) => (
                       <AlbumCard song={song} key={song.id} />
                     ))}
                   </Row>

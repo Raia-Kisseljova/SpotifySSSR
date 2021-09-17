@@ -1,4 +1,4 @@
-import { FILL_SONGS, FILL_SONGS_ERROR, FILL_SONGS_LOADING } from "../reducers";
+import { FILL_SONGS, FILL_SONGS_ERROR, FILL_SONGS_LOADING, SET_SELECTED } from "../reducers";
 
 const rockArtists = [
   "queen",
@@ -18,6 +18,11 @@ const popArtists = [
   "coldplay",
   "katyperry",
 ];
+
+export const setSelectedAction = (song) => ({
+  type: SET_SELECTED,
+  payload: song
+})
 
 const hipHopArtists = ["eminem", "snoopdogg", "lilwayne", "drake", "kanyewest"];
 
