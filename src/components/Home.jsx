@@ -9,7 +9,7 @@ const mapStateToProps = (state) => ({
 });
 
 const mapDispatchToProps = (dispatch) => ({
-  fetchSongs: (artistName) => dispatch(fillSongsAction(artistName)),
+  fetchSongs: () => dispatch(fillSongsAction()),
 });
 
 class Home extends React.Component {
@@ -68,44 +68,7 @@ class Home extends React.Component {
   };
 
   componentDidMount = async () => {
-    let rockRandomArtists = [];
-    let popRandomArtists = [];
-    let hipHopRandomArtists = [];
-
-    while (rockRandomArtists.length < 4) {
-      let artist =
-        this.rockArtists[Math.floor(Math.random() * this.rockArtists.length)];
-      if (!rockRandomArtists.includes(artist)) {
-        rockRandomArtists.push(artist);
-      }
-    }
-
-    while (popRandomArtists.length < 4) {
-      let artist =
-        this.popArtists[Math.floor(Math.random() * this.popArtists.length)];
-      if (!popRandomArtists.includes(artist)) {
-        popRandomArtists.push(artist);
-      }
-    }
-
-    while (hipHopRandomArtists.length < 4) {
-      let artist =
-        this.hipHopArtists[
-          Math.floor(Math.random() * this.hipHopArtists.length)
-        ];
-      if (!hipHopRandomArtists.includes(artist)) {
-        hipHopRandomArtists.push(artist);
-      }
-    }
-
-    for (let j = 0; j < rockRandomArtists.length; j++)
-      await this.handleArtist(rockRandomArtists[j], "rockSongs");
-
-    for (let k = 0; k < popRandomArtists.length; k++)
-      await this.handleArtist(popRandomArtists[k], "popSongs");
-
-    for (let l = 0; l < hipHopRandomArtists.length; l++)
-      await this.handleArtist(hipHopRandomArtists[l], "hipHopSongs");
+    this.props.fetchSongs();
   };
 
   render() {

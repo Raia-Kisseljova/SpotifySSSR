@@ -1,29 +1,18 @@
 // action.types
-export const FILL_SONGS = "FILL_SONGS"
-export const FILL_SONGS_LOADING = "FILL_SONGS_LOADING"
-export const FILL_SONGS_ERROR = "FILL_SONGS_ERROR"
+export const FILL_SONGS = "FILL_SONGS";
+export const FILL_SONGS_LOADING = "FILL_SONGS_LOADING";
+export const FILL_SONGS_ERROR = "FILL_SONGS_ERROR";
 
 export const initialState = {
   song: {
-    data:
-    {
-
-      rockSongs: [],
-      popSongs: [],
-      hipHopSongs: [],
-
-    }
-    , // [{},{},{}]
+    data: {},
     loading: true,
     error: false,
     selected: {}, // {title:...,image:...}
-
   },
-  // this.setState({
-  //   [category]: [...this.state[category], songInfo[0]],
-  // });
+
   library: {
-    favourites: [] // [{},{}] <== songs
+    favourites: [], // [{},{}] <== songs
   },
 };
 
