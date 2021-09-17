@@ -1,6 +1,9 @@
 import { FILL_SONGS, FILL_SONGS_ERROR, FILL_SONGS_LOADING } from "../reducers";
 
 export const fillSongsAction = (artistName, searchSet) => {
+      // this.setState({
+      //   [category]: [...this.state[category], songInfo[0]],
+      // });
     return async (dispatch, getState) => {
       // console.log("searchSet at fillJobsAction:", searchSet); // undefined
       const baseUrl = "https://striveschool-api.herokuapp.com/api/deezer/search?q=";

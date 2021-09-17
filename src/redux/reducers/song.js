@@ -8,6 +8,9 @@ const songReducer = (state = initialState.song, action) => {
         ...state,
         data: action.payload,
       };
+      // this.setState({
+      //   [category]: [...this.state[category], songInfo[0]],
+      // });
     case FILL_SONGS_LOADING:
       return {
         ...state,
