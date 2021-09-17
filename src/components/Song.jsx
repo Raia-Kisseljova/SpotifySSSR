@@ -25,11 +25,11 @@ const Song = ({selected, setSelected, setFavourite, track, favourites}) => {
 
   return (
     <div className='py-3 trackHover'>
-      <AiFillPlayCircle className='play-circle' onClick={() => setSelected(track)} />
+      <AiFillPlayCircle className='playBtn mr-3' onClick={() => setSelected(track)} />
       <span className='card-title trackHover px-3' style={{ color: "white" }}>
         {track.title}
       </span>
-      {isFavourite ? <AiOutlineHeart className='like-gold' />:<AiOutlineHeart className='like' onClick={() => setFavourite(track)} />}
+      {isFavourite ? <AiOutlineHeart />:<AiOutlineHeart className='likeBtn' onClick={() => setFavourite(track)} />}
       <small className='duration' style={{ color: "white" }}>
         {Math.floor(parseInt(track.duration) / 60)}:
         {parseInt(track.duration) % 60 < 10
