@@ -11,56 +11,13 @@ const mapDispatchToProps = (dispatch) => ({
 });
 
 class Home extends React.Component {
-  state = {
-    rockSongs: [],
-    popSongs: [],
-    hipHopSongs: [],
-  };
-
-  rockArtists = [
-    "queen",
-    "u2",
-    "thepolice",
-    "eagles",
-    "thedoors",
-    "oasis",
-    "thewho",
-    "bonjovi",
-  ];
-
-  popArtists = [
-    "arianagrande",
-    "maroon5",
-    "onerepublic",
-    "coldplay",
-    "katyperry",
-  ];
-
-  hipHopArtists = ["eminem", "snoopdogg", "lilwayne", "drake", "kanyewest"];
-
+  
   handleArtist = async (artistName, category) => {
     try {
       await this.props.fetchSongs(artistName, category);
 
       this.setState(this.props.song.data);
-      // let response = await fetch(
-      //   "https://striveschool-api.herokuapp.com/api/deezer/search?q=" +
-      //     artistName,
-      //   {
-      //     method: "GET",
-      //     headers: new Headers({
-      //       "X-RapidAPI-Host": "deezerdevs-deezer.p.rapidapi.com",
-      //       "X-RapidAPI-Key":
-      //         "9d408f0366mshab3b0fd8e5ecdf7p1b09f2jsne682a1797fa0",
-      //     }),
-      //   }
-      // );
 
-      // let result = await response.json();
-      // let songInfo = result.data;
-      // this.setState({
-      //   [category]: [...this.state[category], songInfo[0]],
-      // });
     } catch (err) {
       console.log(err);
     }
