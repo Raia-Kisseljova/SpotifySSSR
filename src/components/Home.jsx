@@ -33,7 +33,7 @@ class Home extends React.Component {
   handleArtist = async (artistName, category) => {
     try {
       let response = await fetch(
-        "https://striveschool-api.herokuapp.com/api/deezer/search?q=" +
+        "https://striveschool-api.herokuapp.com/api/deezer/search?q=" + 
           artistName,
         {
           method: "GET",
