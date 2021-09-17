@@ -2,15 +2,15 @@ import React from "react";
 import AlbumCard from "./AlbumCard";
 import { Row, Col } from "react-bootstrap";
 import { connect } from "react-redux";
-import { fillSongsAction } from "../redux/actions"
+import { fillSongsAction } from "../redux/actions";
 
 const mapStateToProps = (state) => ({
-  song: state.song
-})
+  song: state.song,
+});
 
 const mapDispatchToProps = (dispatch) => ({
-  fetchSongs: (artistName) => dispatch(fillSongsAction(artistName))
-})
+  fetchSongs: (artistName) => dispatch(fillSongsAction(artistName)),
+});
 
 class Home extends React.Component {
   state = {
@@ -42,7 +42,7 @@ class Home extends React.Component {
 
   handleArtist = async (artistName, category) => {
     try {
-      this.props.fetchSongs(artistName)
+      this.props.fetchSongs(artistName, category);
 
       // let response = await fetch(
       //   "https://striveschool-api.herokuapp.com/api/deezer/search?q=" +
@@ -56,6 +56,7 @@ class Home extends React.Component {
       //     }),
       //   }
       // );
+
       // let result = await response.json();
       // let songInfo = result.data;
       // this.setState({
@@ -108,11 +109,12 @@ class Home extends React.Component {
   };
 
   render() {
-    console.log(this.props.song)
+    // console.log(this.state, "THIS IS THE STATE ");
+    // console.log(this.props.song, "THIS");
     return (
-      <Col className='col-12 col-md-9 offset-md-3 mainPage'>
+      <Col className="col-12 col-md-9 offset-md-3 mainPage">
         <Row>
-          <div className='col-9 col-lg-11 mainLinks d-none d-md-flex'>
+          <div className="col-9 col-lg-11 mainLinks d-none d-md-flex">
             <div>TRENDING</div>
             <div>PODCAST</div>
             <div>MOODS AND GENRES</div>
@@ -123,9 +125,9 @@ class Home extends React.Component {
         {this.props.searchResults.length > 0 && (
           <Row>
             <Col xs={10}>
-              <div id='searchResults'>
+              <div id="searchResults">
                 <h2>Search Results</h2>
-                <Row className='row-cols-1 row-cols-sm-2 row-cols-lg-3 row-cols-xl-4 imgLinks py-3'>
+                <Row className="row-cols-1 row-cols-sm-2 row-cols-lg-3 row-cols-xl-4 imgLinks py-3">
                   {this.props.searchResults.map((song) => (
                     <AlbumCard song={song} key={song.id} />
                   ))}
@@ -138,11 +140,12 @@ class Home extends React.Component {
           <>
             <Row>
               <Col xs={10}>
-                <div id='rock'>
+                <div id="rock">
                   <h2>Rock Classics</h2>
                   <Row
-                    className='row-cols-1 row-cols-sm-2 row-cols-lg-3 row-cols-xl-4 imgLinks py-3'
-                    id='rockSection'>
+                    className="row-cols-1 row-cols-sm-2 row-cols-lg-3 row-cols-xl-4 imgLinks py-3"
+                    id="rockSection"
+                  >
                     {this.state.rockSongs.map((song) => (
                       <AlbumCard song={song} key={song.id} />
                     ))}
@@ -152,11 +155,12 @@ class Home extends React.Component {
             </Row>
             <Row>
               <Col xs={10}>
-                <div id='pop'>
+                <div id="pop">
                   <h2>Pop Culture</h2>
                   <Row
-                    className='row-cols-1 row-cols-sm-2 row-cols-lg-3 row-cols-xl-4 imgLinks py-3'
-                    id='popSection'>
+                    className="row-cols-1 row-cols-sm-2 row-cols-lg-3 row-cols-xl-4 imgLinks py-3"
+                    id="popSection"
+                  >
                     {this.state.popSongs.map((song) => (
                       <AlbumCard song={song} key={song.id} />
                     ))}
@@ -166,11 +170,12 @@ class Home extends React.Component {
             </Row>
             <Row>
               <Col xs={10}>
-                <div id='hiphop'>
+                <div id="hiphop">
                   <h2>#HipHop</h2>
                   <Row
-                    className='row-cols-1 row-cols-sm-2 row-cols-lg-3 row-cols-xl-4 imgLinks py-3'
-                    id='hipHopSection'>
+                    className="row-cols-1 row-cols-sm-2 row-cols-lg-3 row-cols-xl-4 imgLinks py-3"
+                    id="hipHopSection"
+                  >
                     {this.state.hipHopSongs.map((song) => (
                       <AlbumCard song={song} key={song.id} />
                     ))}

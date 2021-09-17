@@ -4,15 +4,27 @@ export const FILL_SONGS_LOADING = "FILL_SONGS_LOADING"
 export const FILL_SONGS_ERROR = "FILL_SONGS_ERROR"
 
 export const initialState = {
-    song: {
-      data: [], // [{},{},{}]
-      loading: true,
-      error: false, 
-      selected: {} // {title:...,image:...}
-    },
-    library: {
-        favourites: [] // [{},{}] <== songs
-    },
+  song: {
+    data:
+    {
+
+      rockSongs: [],
+      popSongs: [],
+      hipHopSongs: [],
+
+    }
+    , // [{},{},{}]
+    loading: true,
+    error: false,
+    selected: {}, // {title:...,image:...}
+
+  },
+  // this.setState({
+  //   [category]: [...this.state[category], songInfo[0]],
+  // });
+  library: {
+    favourites: [] // [{},{}] <== songs
+  },
 };
 
 // https://striveschool-api.herokuapp.com/api/deezer/artist/1
