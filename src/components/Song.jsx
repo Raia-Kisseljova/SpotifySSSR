@@ -1,10 +1,13 @@
 import React from "react";
+import { AiOutlineHeart } from "react-icons/ai";
 
 const Song = ({ track }) => (
   <div className="py-3 trackHover">
     <span className="card-title trackHover px-3" style={{ color: "white" }}>
       {track.title}
     </span>
+    <AiOutlineHeart className="like" />
+
     <small className="duration" style={{ color: "white" }}>
       {Math.floor(parseInt(track.duration) / 60)}:
       {parseInt(track.duration) % 60 < 10

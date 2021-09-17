@@ -62,9 +62,9 @@ export const fillSongsAction = () => {
           type: FILL_SONGS,
           payload: state,
         });
-        console.log({ state });
+        // console.log({ state });
       } else {
-        console.log("error");
+        // console.log("error");
         setTimeout(() => {
           dispatch({
             type: FILL_SONGS_LOADING,
@@ -79,7 +79,7 @@ export const fillSongsAction = () => {
         }, 1000);
       }
     } catch (error) {
-      console.log(error);
+      // console.log(error);
       setTimeout(() => {
         dispatch({
           type: FILL_SONGS_LOADING,
