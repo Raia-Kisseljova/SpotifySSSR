@@ -36,7 +36,8 @@ export const fillSongsAction = () => {
               artistSet.map(async (artist) => {
                 const response = await fetch(baseUrl + artist);
                 const data = await response.json();
-                return data.data;
+
+                return data.data.slice(1, 5);
               })
             )
         )
